@@ -1,0 +1,10 @@
+{
+  "name": "emp-app-frontend",
+  "version": 2,
+  "framework": "vite",
+  "buildCommand": "npm install && npm run build",
+  "outputDirectory": "dist",
+  "rewrites": [
+    { "source": "/(.*)", "destination": "/index.html" }
+  ]
+}
