@@ -1,14 +1,19 @@
-# Week 4 - HTML & CSS Styling
+# Week 4 - HTML5 & CSS3 Styling 🎨
 
-Learning the basics of HTML5 and CSS3.
+This week was all about the frontend! We learned how to create structure on the web using HTML5, and how to style it using CSS3.
 
-## Core Concepts
-- HTML semantic elements and forms.
-- CSS Box Model.
-- Styling layout, text, margins, and padding.
+---
 
-## Files
-- `HtmlElements.html`: Standard HTML tag examples.
-- `NestedHtmlElements.html`: Nested structures and styling.
-- `Cat.html`: Web page displaying images and links.
-- `style.css`: Custom CSS stylesheet.
+## 📚 What We Learned
+- **Semantic HTML:** Using descriptive tags (like `<header>`, `<main>`, `<section>`) to build accessible layouts.
+- **CSS Box Model:** Understanding margins, borders, padding, and content sizing.
+- **Responsive Layouts:** Structuring sections, pages, and embedding responsive media like images and links.
+- **Forms & Inputs:** Designing interactive forms to capture user input properly.
+
+---
+
+## 📂 Files Included
+- **`HtmlElements.html`**: A showcase page showing different HTML elements in action.
+- **`NestedHtmlElements.html`**: An exercise on nesting elements and structuring complex HTML trees.
+- **`Cat.html`**: A fun themed webpage featuring images, navigation links, and styled sections.
+- **`style.css`**: The main CSS stylesheet used to design the layouts.

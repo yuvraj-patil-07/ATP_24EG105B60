@@ -1,12 +1,28 @@
-# Week 7 - MERN Blogging Platform
+# Week 7 - MERN Blogging Platform Capstone ✍️
 
-A full-stack capstone blogging application built on the MERN stack.
+This week we built a full-stack Capstone Project: a blogging platform where authors can write and publish articles, and users can read them. It is built using the MERN stack (MongoDB, Express, React, Node.js).
 
-## Tech Stack
-- MongoDB, Express.js, React, Node.js.
-- Authentication: JWT.
-- Media upload: Multer and Cloudinary.
+---
 
-## Directory Structure
-- `Backend-BlogApp`: Server-side API routing, middleware, database connection, and mongoose models.
-- `Frontend-BlogApp`: Client-side single-page React app, page layouts, components, and state management.
+## 🔗 Live Deployment
+- **Frontend URL:** [https://blogapp-three-cyan.vercel.app/](https://blogapp-three-cyan.vercel.app/) (or [https://frontend-blogapp-eight.vercel.app/](https://frontend-blogapp-eight.vercel.app/))
+
+---
+
+## 🛠️ Key Features
+- **Express REST API:** Backend endpoints to manage articles, users, and administrative functions.
+- **User Authentication:** Secure signup and login flow using JWT (JSON Web Tokens).
+- **Article Writing:** Authors can create, edit, and update articles dynamically.
+- **Image Uploads:** Handled using Multer and hosted online using Cloudinary.
+- **Database Integration:** Remote cloud database connectivity using MongoDB Atlas.
+
+---
+
+## 📂 Project Structure
+- **`Backend-BlogApp`**: The backend server application.
+  - **`APIs/`**: API routes for users, authors, and admins.
+  - **`models/`**: MongoDB schemas with Mongoose document validation.
+  - **`server.js`**: Main server script that initializes middlewares and routes.
+- **`Frontend-BlogApp`**: The React frontend application.
+  - **`components/`**: Reusable parts of the page (forms, navbar, cards).
+  - **`stores/`**: State management to track logged-in users and page states.
