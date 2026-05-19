@@ -2,6 +2,8 @@
 import exp from 'express'
 import { connect } from 'mongoose'
 import { config } from 'dotenv'
+import dns from 'dns';
+dns.setDefaultResultOrder('ipv4first');
 import { userApp } from './APIs/UserAPI.js';
 import { authorApp } from './APIs/AuthorAPI.js';
 import { adminApp } from './APIs/AdminAPI.js';

@@ -143,7 +143,7 @@ function ArticleByID() {
         </h1>
 
         <div className={`${articleAuthorRow} flex flex-col sm:flex-row sm:items-center sm:justify-between gap-2 text-sm`}>
-          <div className={authorInfo}>✍ {user.role}</div>
+          <div className={authorInfo}>✍ {user ? user.role : "Guest"}</div>
           <div>{formatDate(article.createdAt)}</div>
         </div>
       </div>
@@ -190,6 +190,15 @@ function ArticleByID() {
 
           </form>
 
+        </div>
+      )}
+
+      {/* GUEST warning to login for commenting */}
+      {(!user || user.role !== "USER") && (
+        <div className="bg-[#f5f5f7] rounded-xl p-4 mt-6 text-center border border-[#e8e8ed]">
+          <p className="text-sm text-[#6e6e73]">
+            Want to join the discussion? <a href="/login" className="text-[#0066cc] font-semibold hover:underline">Log in</a> as a User to comment on this article.
+          </p>
         </div>
       )}
 

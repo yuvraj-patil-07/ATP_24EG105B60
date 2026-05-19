@@ -5,21 +5,59 @@ import {UserModel} from '../models/UserModel.js'
 import {verifyToken} from '../middlewares/verifyToken.js'
 export const userApp = exp.Router()
 
-//  dis  route  is  for  read  all  the  stories  from  all  authors
-userApp.get('/articles',verifyToken("USER"),async(req,res)=>{
-    //  get  the  unique  id  of  the  user  from  the  secret  token
-    const userId = req.user?.id;
-    //  find  the  user  in  the  database  to  see  if  he  exist
-    const user = await UserModel.findById(userId);
-    //  if  user  is  block  by  boss  then  he  cannot  see  anything
-    if(!user.isUserActive){
-        return res.status(400).json({message:"You are blocked from entering further pages"})
+import jwt from 'jsonwebtoken';
+const { verify } = jwt;
+
+//  dis  route  is  for  read  all  the  stories  from  all  authors (public)
+userApp.get('/articles', async (req, res, next) => {
+    try {
+        const token = req.cookies?.token;
+        if (token) {
+            try {
+                const decodedToken = verify(token, process.env.KEY);
+                const user = await UserModel.findById(decodedToken.id);
+                if (user && !user.isUserActive) {
+                    return res.status(403).json({ message: "You are blocked from entering further pages" });
+                }
+            } catch (err) {
+                // Ignore invalid tokens
+            }
+        }
+        //  fetch  all  the  active  articles  from  the  word  pile
+        const articlesList = await ArticleModel.find({ isArticleActive: true });
+        //  yell  back  the  result  to  the  frontend
+        res.status(200).json({ message: "All available Articles", payload: articlesList });
+    } catch (err) {
+        next(err);
     }
-    //  fetch  all  the  active  articles  from  the  word  pile
-    const articlesList = await ArticleModel.find({isArticleActive:true});
-    //  yell  back  the  result  to  the  frontend
-    res.status(200).json({message:"All available Articles",payload:articlesList});
 })
+
+// Route to get single article by ID (public)
+userApp.get('/article/:id', async (req, res, next) => {
+    try {
+        const { id } = req.params;
+        const token = req.cookies?.token;
+        if (token) {
+            try {
+                const decodedToken = verify(token, process.env.KEY);
+                const user = await UserModel.findById(decodedToken.id);
+                if (user && !user.isUserActive) {
+                    return res.status(403).json({ message: "You are blocked from entering further pages" });
+                }
+            } catch (err) {
+                // Ignore invalid tokens
+            }
+        }
+        const article = await ArticleModel.findOne({ _id: id, isArticleActive: true })
+                                          .populate("comment.user");
+        if (!article) {
+            return res.status(404).json({ message: "Article not found" });
+        }
+        res.status(200).json({ message: "Article details", payload: article });
+    } catch (err) {
+        next(err);
+    }
+});
 
 //  dis  route  is  for  add  a  new  comment  to  any  article
 userApp.put('/articles',verifyToken("USER"),async(req,res)=>{
