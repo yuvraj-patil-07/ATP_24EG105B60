@@ -1,15 +1,15 @@
-# Week 7 - MERN Blogging Platform Capstone ✍️
+# Week 7 - MERN Blogging Platform Capstone 
 
 This week we built a full-stack Capstone Project: a blogging platform where authors can write and publish articles, and users can read them. It is built using the MERN stack (MongoDB, Express, React, Node.js).
 
 ---
 
-## 🔗 Live Deployment
-- **Frontend URL:** [https://blogapp-three-cyan.vercel.app/](https://blogapp-three-cyan.vercel.app/) (or [https://frontend-blogapp-eight.vercel.app/](https://frontend-blogapp-eight.vercel.app/))
+##  Live Deployment
+- ** URL:** https://frontend-eta-six-29.vercel.app/
 
 ---
 
-## 🛠️ Key Features
+##  Key Features
 - **Express REST API:** Backend endpoints to manage articles, users, and administrative functions.
 - **User Authentication:** Secure signup and login flow using JWT (JSON Web Tokens).
 - **Article Writing:** Authors can create, edit, and update articles dynamically.
@@ -18,7 +18,7 @@ This week we built a full-stack Capstone Project: a blogging platform where auth
 
 ---
 
-## 📂 Project Structure
+##  Project Structure
 - **`Backend-BlogApp`**: The backend server application.
   - **`APIs/`**: API routes for users, authors, and admins.
   - **`models/`**: MongoDB schemas with Mongoose document validation.
