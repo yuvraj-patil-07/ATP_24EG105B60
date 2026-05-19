@@ -1,10 +1,10 @@
-# Week 1 - JavaScript & Web Foundations 🚀
+# Week 1 - JavaScript & Web Foundations 
 
 Welcome to Week 1! This week covers the basic foundations of web architecture and JavaScript. We went from understanding client-server communication to writing our first JavaScript programs.
 
 ---
 
-## 📚 What We Learned
+## What We Learned
 
 ### Day 1: JavaScript Basics & Web Architecture
 - **Web Concepts:** How the internet works and how clients (browsers) talk to servers.
@@ -19,7 +19,7 @@ Welcome to Week 1! This week covers the basic foundations of web architecture an
 
 ---
 
-## 🛠️ Assignments & Practice
+##  Assignments & Practice
 
 ### Day 1 Assignments
 1. **Compare Two Numbers:** Write a script to find and display the larger of two numbers.
