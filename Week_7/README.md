@@ -5,7 +5,7 @@ This week we built a full-stack Capstone Project: a blogging platform where auth
 ---
 
 ##  Live Deployment
-- ** URL:** https://frontend-eta-six-29.vercel.app/
+- ** URL:** https://frontend-blogapp-eight.vercel.app/
 
 ---
 
