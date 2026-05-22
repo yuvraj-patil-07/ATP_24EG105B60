@@ -1,4 +1,5 @@
-import {Schema,SchemaTypes,model} from 'mongoose'
+import mongoose from 'mongoose';
+const { Schema, SchemaTypes, model, models } = mongoose;
 
 
 const commentSchema = new Schema({
@@ -32,9 +33,6 @@ const articleSchema = new Schema({
     },
     comment:[{ type:commentSchema , default:[]}],
     isArticleActive:{
-
-    },
-    isArticleActive:{
         type:Boolean,
         default:true
     }
@@ -44,4 +42,4 @@ const articleSchema = new Schema({
     strict:"throw"
 })
 
-export const ArticleModel = model("article",articleSchema);
+export const ArticleModel = models.article || model("article",articleSchema);

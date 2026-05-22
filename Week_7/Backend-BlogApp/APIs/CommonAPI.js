@@ -29,7 +29,7 @@ commonApp.post('/users', upload.single("profileImageUrl"), async (req, res, next
         /// upload image to cloudinary from memoryStorage
         if (req.file) {
     try {
-        const cloudinaryResult = await uploadToCloudinary(req.file.buffer);
+        cloudinaryResult = await uploadToCloudinary(req.file.buffer);
         newUser.profileImageUrl = cloudinaryResult?.secure_url;
     } catch (err) {
         newUser.profileImageUrl = "";
